@@ -1,0 +1,13 @@
+---
+Resources:
+  udemycloudwatch:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: eu-west-2a
+      ImageId: ami-03e88be9ecff64781
+      SubnetId: subnet-04c8dd3231c766d20
+      InstanceType: t2.micro
+      Tags:
+        -
+          Key: Name
+          Value: udemy-cloudwatch-1
