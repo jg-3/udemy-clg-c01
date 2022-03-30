@@ -12,20 +12,17 @@ Resources:
         -
           Key: Name
           Value: udemy-ldn-srv2
+      SecurityGroups:
+        - !Ref ServerSecurityGroup
   
-  InstanceSecurityGroup:
-  Type: AWS::EC2::SecurityGroup
-  Properties:
-    GroupDescription: Allow http to client host
-    VpcId: 
-      Ref: vpc-0327f71b1ad32bcce
-    SecurityGroupIngress:
-    - IpProtocol: tcp
-    FromPort: 80
-    ToPort: 80
-    CidrIp: 0.0.0.0/0
-    SecurityGroupEgress:
-    - IpProtocol: tcp
-    FromPort: 80
-    ToPort: 80
-    CidrIp: 0.0.0.0/0
+  # our second EC2 security group
+  ServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow port 80
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0
+  
