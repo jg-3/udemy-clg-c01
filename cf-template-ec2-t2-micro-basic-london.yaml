@@ -18,7 +18,8 @@ Resources:
   Properties:
     GroupDescription: Allow http to client host
     GroupName: udemy-port80
-    VpcId: vpc-0327f71b1ad32bcce
+    VpcId: 
+      Ref: vpc-0327f71b1ad32bcce
     SecurityGroupIngress:
     - IpProtocol: tcp
     FromPort: 80
