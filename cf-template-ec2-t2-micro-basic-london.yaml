@@ -1,6 +1,6 @@
 ---
 Resources:
-  udemycloudwatch:
+  udemyec2serverldn:
     Type: AWS::EC2::Instance
     Properties:
       AvailabilityZone: eu-west-2a
@@ -10,4 +10,4 @@ Resources:
       Tags:
         -
           Key: Name
-          Value: udemy-cloudwatch-1
+          Value: udemy-ldn-srv1
