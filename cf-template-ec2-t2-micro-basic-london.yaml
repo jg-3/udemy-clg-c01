@@ -17,7 +17,6 @@ Resources:
   Type: AWS::EC2::SecurityGroup
   Properties:
     GroupDescription: Allow http to client host
-    GroupName: udemy-port80
     VpcId: 
       Ref: vpc-0327f71b1ad32bcce
     SecurityGroupIngress:
