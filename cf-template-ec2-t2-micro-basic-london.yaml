@@ -11,7 +11,7 @@ Resources:
         -
           Key: Name
           Value: udemy-ldn-srv2a
-      SecurityGroups:
+      SecurityGroupIds:
         - !Ref ServerSecurityGroup
   
   # our second EC2 security group
