@@ -28,6 +28,5 @@ Resources:
       -
         Key: Name
         Value: udemy-in-port80
-      VpcId:
-        Ref: vpc-0327f71b1ad32bcce
+      VpcId: vpc-0327f71b1ad32bcce
   
