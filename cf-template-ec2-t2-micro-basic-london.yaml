@@ -47,7 +47,7 @@ Resources:
         - !Ref vigServerSecurityGroup
   
   # n.vig EC2 security group
-  ldnServerSecurityGroup:
+  vigServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescription: Allow port 80
