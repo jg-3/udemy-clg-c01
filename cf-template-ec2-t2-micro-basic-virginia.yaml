@@ -1,0 +1,33 @@
+---
+Resources:
+  # n.virg EC2 server
+  udemyec2servervig:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-0c02fb55956c7d316
+      InstanceType: t2.micro
+      UserData: IyEvYmluL2Jhc2gKIyBVc2UgdGhpcyBmb3IgeW91ciB1c2VyIGRhdGEgKHNjcmlwdCBmcm9tIHRvcCB0byBib3R0b20pCiMgaW5zdGFsbCBodHRwZCAoTGludXggMiB2ZXJzaW9uKQp5dW0gdXBkYXRlIC15Cnl1bSBpbnN0YWxsIC15IGh0dHBkCnN5c3RlbWN0bCBzdGFydCBodHRwZApzeXN0ZW1jdGwgZW5hYmxlIGh0dHBkCmVjaG8gIjxoMT5IZWxsbyBXb3JsZCBmcm9tIExvbmRvbiAkKGhvc3RuYW1lIC1mKTwvaDE+IiA+IC92YXIvd3d3L2h0bWwvaW5kZXguaHRtbA==
+      Tags:
+        -
+          Key: Name
+          Value: udemy-vig-srv1a
+      SecurityGroupIds:
+        - !Ref vigServerSecurityGroup
+  
+  # n.virg EC2 security group
+  vigServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow port 80
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0
+      Tags:
+      -
+        Key: Name
+        Value: udemy-vir-in-port80
+      VpcId: vpc-05af49b1f1bac8340
+  
